@@ -1,0 +1,15 @@
+{
+  "name": "Extension-Anti-Highlighted-Content",
+  "short_name": "AHC",
+  "description": "This web extension allows you to remove the content highlighted on the most popular search engines such as Google, Bing, DuckDuckGo and many others...",
+  "version": "1",
+  "manifest_version": 2,
+  "display": "standalone",
+  "homepage_url": "https://example.com",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["index.js"]
+    }
+  ]
+}
