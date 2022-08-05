@@ -9,4 +9,25 @@ window.onload = () => {
       break
     }
   }
+  switch (website) {
+    case "google":
+      document.querySelectorAll(".Pm5mre").forEach(el => { el.remove() })
+      break;
+    case "bing":
+      document.querySelectorAll(".b_ad").forEach(el => { el.remove() })
+      break;
+    case "yandex":
+      document.querySelectorAll(".serp-item").forEach(el => {
+        if (el.attributes.length > 4) {
+          el.remove()
+        }
+      })
+      break;
+    case "duckduckgo":
+      document.querySelectorAll("#ads").forEach(el => { el.remove() })
+      break;
+
+    default:
+      break;
+  }
 }
