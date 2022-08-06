@@ -1,15 +1,13 @@
+const websites = [["google.", "search?"], ["bing.", "search?"], ["yandex.", "q="], ["duckduckgo.", "q="]];
+
 window.onload = () => {
   let url = document.baseURI
-  const websites = [["google.", "search?"], ["bing.", "search?"], ["yandex.", "q="], ["duckduckgo.", "q="]];
-  let website;
-  for (const i of websites) {
-    if (url.includes(i[0]) && url.includes(i[1])) {
-      console.log(i);
-      website = i[0].split(".")[0]
-      break
-    }
+  const isSearchEngine = () => {
+    for (const i of websites)
+      (url.includes(i[0]) && url.includes(i[1])) ? i[0].split(".")[0] : null;
   }
-  switch (website) {
+
+  switch (isSearchEngine()) {
     case "google":
       document.querySelectorAll(".Pm5mre").forEach(el => { el.remove() })
       break;
@@ -25,9 +23,6 @@ window.onload = () => {
       break;
     case "duckduckgo":
       document.querySelectorAll("#ads").forEach(el => { el.remove() })
-      break;
-
-    default:
       break;
   }
 }
